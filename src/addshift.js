@@ -3,7 +3,7 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Time = React.createClass({
 	
     render: function() {
-        return <input type="time" className="col-xs-5 timeInput"/>
+        return <input type="time" className="col-xs-4 timeInput"/>
               
     }
 });
@@ -24,8 +24,9 @@ var AddedShift = React.createClass({
     render: function() {
     	return	<div className="col-xs-12">
 	        		<Time />
-	    					<span className="col-xs-2 to">to</span>
+	    			<span className="col-xs-2 to">to</span>
 	                <Time />
+	                <a onClick={this.remove} className="col-xs-1 remove"><i className="fa fa-times-circle fa-2x"></i></a>
 	            </div>
     }
 });
@@ -34,12 +35,13 @@ var Break = React.createClass({
 
 	render: function () {
 		return <div className="col-xs-12">
-					<span className="col-xs-6 break">Break</span>
-					<select name="break" className="col-xs-6">
+					<span className="col-xs-5 break">Break</span>
+					<select name="break" className="col-xs-5">
   						<option value="15 min">15 min</option> 
   						<option value="30 min" selected>30 min</option>
   						<option value="1 hour">1 hour</option>
 					</select>
+					<a onClick={this.remove} className="col-xs-1 remove"><i className="fa fa-times-circle fa-2x"></i></a>
 				</div>
 	}
 });
@@ -54,7 +56,7 @@ var AddShift = React.createClass({
     	this.setState({shift: <div>
         						{this.state.shift}
         						<div className="row v-spacing">
-                                	<AddedShift />
+                                	<AddedShift  number={this.state.i} />
                                 </div>
                               </div>
         });
@@ -64,7 +66,7 @@ var AddShift = React.createClass({
     	    	this.setState({shift: <div>
         						{this.state.shift}
         						<div className="row v-spacing">
-                                	<Break />
+                                	<Break number={this.state.i} />
                                 </div>
                               </div>
         });

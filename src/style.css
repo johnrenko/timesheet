@@ -38,6 +38,10 @@ a:hover {
     cursor: pointer;
 }
 
+a.remove{
+    color: #d3d3d3;
+}
+
 .line{
     display: inline-block;
 }
