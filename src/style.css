@@ -1,0 +1,75 @@
+body{
+    font-family: arial;
+}
+
+input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #d3d3d3;
+    font-family: arial;
+    font-size: 14px;
+    max-width: auto;
+}
+
+input[type=time]::-webkit-inner-spin-button, 
+input[type=time]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+span.to{
+    display: inline-block;
+    font-size: 12px;
+    color: #969EA7;
+    text-align: center;
+}
+
+a {
+    color: #AB1678;
+    display: inline-block;
+    line-height: 44px;
+}
+
+a:hover {
+    color: #5c247b;
+    text-decoration: underline ;
+    cursor: pointer;
+}
+
+.line{
+    display: inline-block;
+}
+
+.wrap{
+    height: auto;
+}
+
+.v-spacing{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.shift-block{
+    border-bottom: 1px solid #d3d3d3;
+    padding: 15px;
+}
+
+.shift-block:nth-of-type(1){
+    border-top: 1px solid #d3d3d3;
+    margin-top: 10px;
+}
+
+span.day{
+    font-size: 1.2em;
+    color: #4D5B6A;
+}
+
+.container{
+    padding: 0;
+}
+
+.timeInput{
+
+}
