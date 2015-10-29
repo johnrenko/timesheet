@@ -30,6 +30,20 @@ var AddedShift = React.createClass({
     }
 });
 
+var Break = React.createClass({
+
+	render: function () {
+		return <div className="col-xs-12">
+					<span className="col-xs-6 break">Break</span>
+					<select name="break" className="col-xs-6">
+  						<option value="15 min">15 min</option> 
+  						<option value="30 min" selected>30 min</option>
+  						<option value="1 hour">1 hour</option>
+					</select>
+				</div>
+	}
+});
+
 var AddShift = React.createClass({
 
 	getInitialState: function() {
@@ -41,6 +55,16 @@ var AddShift = React.createClass({
         						{this.state.shift}
         						<div className="row v-spacing">
                                 	<AddedShift />
+                                </div>
+                              </div>
+        });
+    },
+
+    addBreak() {
+    	    	this.setState({shift: <div>
+        						{this.state.shift}
+        						<div className="row v-spacing">
+                                	<Break />
                                 </div>
                               </div>
         });
@@ -62,8 +86,11 @@ var AddShift = React.createClass({
     						{this.state.shift}
     					</div>
         				<div className="row v-spacing">
-                        	<div className="col-xs-12">
+                        	<div className="col-xs-6">
                             	<a onClick={this.add}>+ Add shift</a>
+                        	</div>
+                        	<div className="col-xs-6">
+                            	<a onClick={this.addBreak}>+ Add break</a>
                         	</div>
                             
                         </div>
