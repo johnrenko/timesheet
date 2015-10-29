@@ -73,3 +73,7 @@ span.day{
 .timeInput{
 
 }
+
+span.break{
+    text-align: right;
+}
