@@ -33,13 +33,17 @@ var AddedShift = React.createClass({
 
 var Break = React.createClass({
 
+    remove(){
+        // React.unmountComponentAtNode(React.findDOMNode(this.className.dropdown))
+    },
+
 	render: function () {
 		return <div className="col-xs-12 line">
 					<span className="col-xs-6 break">Break</span>
 					<label className="col-xs-4">
-						<select name="break" className="dropdown">
+						<select name="break" value="30 min" className="dropdown">
 	  						<option value="15 min">15 min</option> 
-	  						<option value="30 min" selected>30 min</option>
+	  						<option value="30 min">30 min</option>
 	  						<option value="1 hour">1 hour</option>
 						</select>
 					</ label>
