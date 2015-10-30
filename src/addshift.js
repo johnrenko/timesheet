@@ -22,7 +22,7 @@ var InitialShift = React.createClass({
 var AddedShift = React.createClass({
 	
     render: function() {
-    	return	<div className="col-xs-12">
+    	return	<div className="col-xs-12 line">
 	        		<Time />
 	    			<span className="col-xs-2 to">to</span>
 	                <Time />
@@ -34,13 +34,15 @@ var AddedShift = React.createClass({
 var Break = React.createClass({
 
 	render: function () {
-		return <div className="col-xs-12">
-					<span className="col-xs-5 break">Break</span>
-					<select name="break" className="col-xs-5">
-  						<option value="15 min">15 min</option> 
-  						<option value="30 min" selected>30 min</option>
-  						<option value="1 hour">1 hour</option>
-					</select>
+		return <div className="col-xs-12 line">
+					<span className="col-xs-6 break">Break</span>
+					<label className="col-xs-4">
+						<select name="break" className="dropdown">
+	  						<option value="15 min">15 min</option> 
+	  						<option value="30 min" selected>30 min</option>
+	  						<option value="1 hour">1 hour</option>
+						</select>
+					</ label>
 					<a onClick={this.remove} className="col-xs-1 remove"><i className="fa fa-times-circle fa-2x"></i></a>
 				</div>
 	}
