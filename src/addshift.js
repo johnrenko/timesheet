@@ -106,13 +106,13 @@ var AddShift = React.createClass({
 
 ReactDOM.render(
 	<div>
-		<AddShift day="Mon 02 Jan"/>
-		<AddShift day="Tue 03 Jan"/>
-		<AddShift day="Wed 04 Jan"/>
-		<AddShift day="Thu 05 Jan"/>
-		<AddShift day="Fri 06 Jan"/>
-		<AddShift day="Sat 07 Jan"/>
-		<AddShift day="Sun 08 Jan"/>
+		<AddShift day="Mon 02 Jan" />
+		<AddShift day="Tue 03 Jan" />
+		<AddShift day="Wed 04 Jan" />
+		<AddShift day="Thu 05 Jan" />
+		<AddShift day="Fri 06 Jan" />
+		<AddShift day="Sat 07 Jan" />
+		<AddShift day="Sun 08 Jan" />
 	</div>,
     document.getElementById('container')
 );
