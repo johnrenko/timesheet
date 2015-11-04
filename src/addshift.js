@@ -111,8 +111,8 @@ var AddShift = React.createClass({
 var Week = React.createClass({
     render: function() {
     return  <div>
-            <Accordion>
-                <Panel header="Mon 02 Jan" defaultExpanded={true} eventKey="1">
+            <Accordion defaultActiveKey="1">
+                <Panel header="Mon 02 Jan" eventKey="1">
                     <AddShift day="Mon 02 Jan" />
                 </Panel>
                 <Panel header="Tue 03 Jan" eventKey="2">
