@@ -3,9 +3,16 @@ var Panel = ReactBootstrap.Panel;
 var Accordion = ReactBootstrap.Accordion;
 
 var Time = React.createClass({
-	
+    getInitialState: function() {
+        return {value: '00:00'};
+    },
+
+    handleChange: function(event) {
+        this.setState({value: event.target.value});
+    },
+
     render: function() {
-        return <input type="time" className="col-xs-4 timeInput"/>
+        return <input type="time" defaultValue={this.state.value} onChange={this.handleChange} className="col-xs-4 timeInput"/>
               
     }
 });
@@ -35,15 +42,23 @@ var AddedShift = React.createClass({
 
 var Break = React.createClass({
 
+    getInitialState: function() {
+        return {value: '30 min'};
+    },
+
+    handleChange: function(event) {
+        this.setState({value: event.target.value});
+    },
+
     remove(){
-        // React.unmountComponentAtNode(React.findDOMNode(this.className.dropdown))
+        ReactDOM.unmountComponentAtNode(document.getElementById(''))
     },
 
 	render: function () {
 		return <div className="col-xs-12 breakline">
 					<span className="col-xs-6 break">Break</span>
 					<label className="col-xs-4">
-						<select name="break" value="30 min" className="dropdown">
+						<select name="break" defaultValue={this.state.value} onChange={this.handleChange} className="dropdown">
 	  						<option value="15 min">15 min</option> 
 	  						<option value="30 min">30 min</option>
 	  						<option value="1 hour">1 hour</option>
@@ -66,6 +81,7 @@ var AddShift = React.createClass({
         						<div className="row v-spacing">
                                 	<AddedShift  number={this.state.i} />
                                 </div>
+
                               </div>
         });
     },
@@ -76,6 +92,7 @@ var AddShift = React.createClass({
         						<div className="row v-spacing">
                                 	<Break number={this.state.i} />
                                 </div>
+                                
                               </div>
         });
     },
