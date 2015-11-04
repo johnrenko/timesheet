@@ -87,15 +87,15 @@ a.remove{
     margin-bottom: 10px;
 }
 
-.shift-block{
-    border-bottom: 1px solid #d3d3d3;
+/*.shift-block{
+    border-bottom: 1px solid #d3d3d3;  
     padding: 15px;
 }
 
 .shift-block:nth-of-type(1){
     border-top: 1px solid #d3d3d3;
     margin-top: 10px;
-}
+} */
 
 span.day{
     font-size: 1.2em;
@@ -140,4 +140,66 @@ input[type=time]{
 
 .line{
     height: 44px;
+    margin-top: 10px;
 }
+
+.breakline{
+    height: 44px;
+}
+
+.panel-title a{
+    width: 100%;
+    text-decoration: none;
+}
+
+.panel-group .panel+.panel{
+    margin-top: 0;
+}
+
+.panel-group .panel{
+    border-radius: 0px;
+}
+
+.panel-default>.panel-heading{
+    background-color: #fff;
+}
+
+.panel-group{
+    margin-top: 10px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body{
+    border-top: 0;
+}
+
+.panel-body{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.panel-heading{
+    border-top: 1px solid #d3d3d3;
+}
+
+.panel{
+    border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

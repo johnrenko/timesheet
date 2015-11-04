@@ -1,4 +1,6 @@
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+var Panel = ReactBootstrap.Panel;
+var Accordion = ReactBootstrap.Accordion;
 
 var Time = React.createClass({
 	
@@ -38,7 +40,7 @@ var Break = React.createClass({
     },
 
 	render: function () {
-		return <div className="col-xs-12 line">
+		return <div className="col-xs-12 breakline">
 					<span className="col-xs-6 break">Break</span>
 					<label className="col-xs-4">
 						<select name="break" value="30 min" className="dropdown">
@@ -80,43 +82,65 @@ var AddShift = React.createClass({
 
 	render: function() {
     	return <div className="shift-block">
-    					<div className="row">
-    						<div className="col-xs-12">
-    							<span className="day">
-    								{this.props.day}
-    							</span>
-    						</div>
-    					</div>
+
+
     					<div className="row v-spacing">
     						<InitialShift />
     					</div>
+
     					<div className="">
     						{this.state.shift}
     					</div>
+
         				<div className="row v-spacing">
+
                         	<div className="col-xs-6">
                             	<a onClick={this.add}>+ Add shift</a>
                         	</div>
+
                         	<div className="col-xs-6">
                             	<a onClick={this.addBreak}>+ Add break</a>
+                            
                         	</div>
-                            
-                        </div>
-                            
+
+                        </div>     
                </div>
     }
 });
 
+var Week = React.createClass({
+    render: function() {
+    return  <div>
+            <Accordion>
+                <Panel header="Mon 02 Jan" defaultExpanded={true} eventKey="1">
+                    <AddShift day="Mon 02 Jan" />
+                </Panel>
+                <Panel header="Tue 03 Jan" eventKey="2">
+                    <AddShift day="Tue 03 Jan" />
+                </Panel>
+                <Panel header="Wed 04 Jan" eventKey="3">
+                    <AddShift day="Wed 04 Jan" />
+                </Panel>
+                <Panel header="Thu 05 Jan" eventKey="4">
+                    <AddShift day="Thu 05 Jan" />
+                </Panel>
+                <Panel header="Fri 06 Jan" eventKey="5">
+                    <AddShift day="Fri 06 Jan" />
+                </Panel>
+                <Panel header="Sat 07 Jan" eventKey="6">
+                    <AddShift day="Sat 07 Jan" />
+                </Panel>
+                <Panel header="Sun 08 Jan" eventKey="7">
+                    <AddShift day="Sun 08 Jan" />
+                </Panel>
+            </Accordion>
+            </div>
+    }
+});
 
 ReactDOM.render(
 	<div>
-		<AddShift day="Mon 02 Jan" />
-		<AddShift day="Tue 03 Jan" />
-		<AddShift day="Wed 04 Jan" />
-		<AddShift day="Thu 05 Jan" />
-		<AddShift day="Fri 06 Jan" />
-		<AddShift day="Sat 07 Jan" />
-		<AddShift day="Sun 08 Jan" />
+		<Week />
 	</div>,
     document.getElementById('container')
 );
