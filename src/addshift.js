@@ -4,7 +4,12 @@ var Accordion = ReactBootstrap.Accordion;
 
 var Time = React.createClass({
     getInitialState: function() {
-        return {value: '00:00'};
+        if (this.props.dateTime === "morning") {
+            return {value: '08:00'};
+        }else{
+            return {value: '18:00'};
+        };
+        
     },
 
     handleChange: function(event) {
@@ -21,7 +26,7 @@ var InitialShift = React.createClass({
 	
     render: function() {
         return <div className="col-xs-12">
-        			<Time/>
+        			<Time dateTime="morning"/>
         				<span className="col-xs-2 to">to</span>
                     <Time/>
                </div>
@@ -32,7 +37,7 @@ var AddedShift = React.createClass({
 	
     render: function() {
     	return	<div className="col-xs-12 line">
-	        		<Time />
+	        		<Time dateTime="morning"/>
 	    			<span className="col-xs-2 to">to</span>
 	                <Time />
 	                <a onClick={this.remove} className="col-xs-1 remove"><i className="fa fa-times-circle fa-2x"></i></a>
@@ -79,7 +84,7 @@ var AddShift = React.createClass({
     	this.setState({shift: <div>
         						{this.state.shift}
         						<div className="row v-spacing">
-                                	<AddedShift  number={this.state.i} />
+                                	<AddedShift/>
                                 </div>
 
                               </div>
@@ -90,7 +95,7 @@ var AddShift = React.createClass({
     	    	this.setState({shift: <div>
         						{this.state.shift}
         						<div className="row v-spacing">
-                                	<Break number={this.state.i} />
+                                	<Break/>
                                 </div>
                                 
                               </div>

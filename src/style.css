@@ -78,6 +78,10 @@ a.remove {
 
 .v-spacing {
     margin-top: 10px;
+}
+
+.v-spacing:last-child {
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -133,7 +137,7 @@ input[type=time] {
 
 .line {
     height: 44px;
-    margin-top: 15px;
+    margin-top: 10px;
     display: inline-block;
 }
 
